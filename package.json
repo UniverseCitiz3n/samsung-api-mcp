@@ -4,6 +4,10 @@
     "description": "MCP server for Samsung Patch API — query firmware versions and available models",
     "main": "dist/index.cjs",
     "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/UniverseCitiz3n/samsung-api-mcp.git"
+    },
     "bin": {
         "samsung-api-mcp": "dist/index.cjs"
     },
@@ -12,6 +16,7 @@
     ],
     "scripts": {
         "build": "node build.js",
+        "prepare": "npm run build",
         "start": "node dist/index.cjs",
         "dev": "node src/index.js"
     },

@@ -6,7 +6,9 @@ MCP server for the [Samsung Patch API](https://api.cloudaligned.pl) — query Sa
 
 ## One-Click Install
 
-[<img src="https://img.shields.io/badge/VS_Code-Install_MCP_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white" alt="Install in VS Code" />](https://insiders.vscode.dev/redirect/mcp/install?name=samsung-api&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22samsung-api-mcp%22%5D%7D)
+[<img src="https://img.shields.io/badge/VS_Code-Install_MCP_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white" alt="Install in VS Code" />](https://insiders.vscode.dev/redirect/mcp/install?name=samsung-api&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22github%3AUniverseCitiz3n%2Fsamsung-api-mcp%23main%22%5D%7D)
+
+The package is not published to npm yet, so the installer uses the public GitHub repository.
 
 Or add manually to your VS Code `settings.json`:
 
@@ -16,7 +18,7 @@ Or add manually to your VS Code `settings.json`:
     "servers": {
       "samsung-api": {
         "command": "npx",
-        "args": ["-y", "samsung-api-mcp"]
+        "args": ["-y", "github:UniverseCitiz3n/samsung-api-mcp#main"]
       }
     }
   }
@@ -32,7 +34,7 @@ Add to your `claude_desktop_config.json`:
   "mcpServers": {
     "samsung-api": {
       "command": "npx",
-      "args": ["-y", "samsung-api-mcp"]
+      "args": ["-y", "github:UniverseCitiz3n/samsung-api-mcp#main"]
     }
   }
 }
