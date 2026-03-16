@@ -1,0 +1,31 @@
+{
+    "name": "samsung-api-mcp",
+    "version": "1.0.0",
+    "description": "MCP server for Samsung Patch API — query firmware versions and available models",
+    "main": "dist/index.cjs",
+    "type": "module",
+    "bin": {
+        "samsung-api-mcp": "dist/index.cjs"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "node build.js",
+        "start": "node dist/index.cjs",
+        "dev": "node src/index.js"
+    },
+    "keywords": [
+        "mcp",
+        "samsung",
+        "firmware",
+        "api"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.12.1"
+    },
+    "devDependencies": {
+        "esbuild": "^0.25.0"
+    }
+}
