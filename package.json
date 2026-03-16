@@ -16,6 +16,7 @@
     ],
     "scripts": {
         "build": "node build.js",
+        "prepare": "npm run build",
         "start": "node dist/index.cjs",
         "dev": "node src/index.js"
     },
