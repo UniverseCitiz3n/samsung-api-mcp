@@ -107,6 +107,42 @@ server.tool(
   }
 );
 
+// Tool: request-new-model
+server.tool(
+  "request-new-model",
+  "Request support for a new Samsung device model to be added to the firmware database. Opens the GitHub issue form in your browser (GitHub sign-in required).",
+  {},
+  async () => {
+    const url =
+      "https://github.com/UniverseCitiz3n/Samsung-Patch-API-Feedback/issues/new?template=new_model_request.yml";
+
+    try {
+      const { execFile } = await import("child_process");
+      const { promisify } = await import("util");
+      const execFileAsync = promisify(execFile);
+      const platform = process.platform;
+      if (platform === "darwin") {
+        await execFileAsync("open", [url]);
+      } else if (platform === "win32") {
+        await execFileAsync("cmd", ["/c", "start", "", url]);
+      } else {
+        await execFileAsync("xdg-open", [url]);
+      }
+    } catch {
+      // Ignore errors opening browser — URL is returned below
+    }
+
+    return {
+      content: [
+        {
+          type: "text",
+          text: `To request a new Samsung model, please visit the following URL in your browser (GitHub sign-in required):\n\n${url}`,
+        },
+      ],
+    };
+  }
+);
+
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
